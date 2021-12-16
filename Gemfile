@@ -4,6 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 
+#figaro install
+gem 'figaro', '~> 1.2'
+#devise Omniauth-google
+gem 'omniauth-google-oauth2', '~> 1.0'
+gem 'omniauth-rails_csrf_protection'
 # Use devise as the membership_manage_system
 gem 'devise', '~> 4.8'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
