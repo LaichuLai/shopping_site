@@ -3,4 +3,11 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :products, only: [:index, :show]
+
+  namespace :admin do
+    root 'pages#index'
+    resources :products
+  end
+
+
 end
