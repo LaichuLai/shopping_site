@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'pages#index'
     resources :products
+    resources :vendors, except: [:show]
   end
 
 

@@ -14,8 +14,10 @@
   <body>
     <%= render 'shared/frontend/flash' if notice %>
     <%= render 'shared/backend/navbar' %>
+    <section class='container'>
+      <%= yield %>
+    </section>
 
-    <%= yield %>
 
   </body>
 
