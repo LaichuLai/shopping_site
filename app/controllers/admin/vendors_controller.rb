@@ -30,6 +30,12 @@ class Admin::VendorsController < Admin::BackshareController
     end
   end
 
+  def destroy
+    @vendor = Vendor.find(params[:id])
+    @vendor.destroy
+    redirect_to admin_vendors_path, notice: '已刪除供應商'
+  end
+
 
 
   private
