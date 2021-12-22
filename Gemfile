@@ -3,7 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
-
+#paranoia install
+gem 'paranoia', '~> 2.5'
 #figaro install
 gem 'figaro', '~> 1.2'
 #devise Omniauth-google
