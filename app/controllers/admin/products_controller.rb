@@ -4,6 +4,7 @@ class Admin::ProductsController < Admin::BackshareController
   end
 
   def new
+    @product = Product.new
   end
 
   def create

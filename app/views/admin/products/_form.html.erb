@@ -1,0 +1,26 @@
+
+<%= form_with(model: [:admin, product]) do |form| %>
+  <div class="field">
+    <%= form.label :name, '商品名稱', class: 'label' %>
+    <%= form.text_field :name, class: 'input' %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :list_price, '商品訂價', class: 'label' %>
+    <%= form.text_field :list_price, class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sell_price, '商品售價', class: 'label' %>
+    <%= form.text_field :sell_price, class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :is_selling %>
+    <%= form.label :is_selling, '是否上架', class: 'checkbox' %>
+  </div>
+
+  <%= form.submit value= '新增', class: 'button is-primary is-medium' %>
+  <input type="button" class='button is-gray is-medium' value="取消" onclick="location.href='/admin/products'">
+<% end %>
