@@ -5,6 +5,13 @@
     <%= form.text_field :name, class: 'input' %>
   </div>
 
+  <div class="field">
+    <%= form.label :vendor_id, '廠商', class: 'label' %>
+    <div class='select is-medium is-fullwidth'>
+      <%= form.collection_select :vendor_id, Vendor.available, :id, :title %>
+    </div>
+  </div>
+
 
   <div class="field">
     <%= form.label :list_price, '商品訂價', class: 'label' %>

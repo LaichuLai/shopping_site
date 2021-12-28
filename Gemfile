@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+#friendly id 
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 #paranoia install
 gem 'paranoia', '~> 2.5'
 #figaro install
