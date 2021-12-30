@@ -1,6 +1,7 @@
 class Admin::ProductsController < Admin::BackshareController
 
   def index
+    @products = Product.all.includes(:vendor)
   end
 
   def new
