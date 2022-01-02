@@ -18,3 +18,5 @@ import "styles/shared"
 
 import "scripts/frontend"
 import "scripts/shared"
+require("trix")
+require("@rails/actiontext")

@@ -28,6 +28,11 @@
     <%= form.label :is_selling, '是否上架', class: 'checkbox' %>
   </div>
 
+  <div class="field">
+    <%= form.check_box :description %>
+    <%= form.rich_text_area :description %>
+  </div>
+
   <%= form.submit value= '新增', class: 'button is-primary is-medium' %>
   <input type="button" class='button is-gray is-medium' value="取消" onclick="location.href='/admin/products'">
 <% end %>

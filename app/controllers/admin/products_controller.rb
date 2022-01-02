@@ -19,12 +19,22 @@ class Admin::ProductsController < Admin::BackshareController
   end
 
   def edit
+    @product = Product.friendly.find(params[:id])
   end
 
   def update
+    @product = Product.friendly.find(params[:id])
+      if @product.update(product_params)
+        redirect_to admin_products_path(@product), notice: "修改成功"
+      else 
+        render :edit
+      end
   end
 
-  def destory
+  def destroy
+    @product = Product.friendly.find(params[:id])
+    @product.destroy
+    redirect_to admin_products_path(@product), notice: "刪除成功"
   end
 
   private
