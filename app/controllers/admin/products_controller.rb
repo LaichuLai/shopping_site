@@ -40,6 +40,6 @@ class Admin::ProductsController < Admin::BackshareController
   private
   
   def product_params
-    params.require(:product).permit(:name, :vendor_id, :list_price, :sell_price)
+    params.require(:product).permit(:name, :vendor_id, :list_price, :sell_price,:is_selling, :description)
   end
 end
