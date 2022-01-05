@@ -6,6 +6,7 @@ class Admin::ProductsController < Admin::BackshareController
 
   def new
     @product = Product.new
+    @product.stocks.build
   end
 
   def create
@@ -40,6 +41,14 @@ class Admin::ProductsController < Admin::BackshareController
   private
   
   def product_params
-    params.require(:product).permit(:name, :vendor_id, :list_price, :sell_price,:is_selling, :description)
+    params.require(:product).permit(:name, 
+                                    :vendor_id, 
+                                    :list_price, 
+                                    :sell_price, 
+                                    :is_selling, 
+                                    :description, 
+                                    stocks_attributes: [
+                                      :id, :spec, :quantity, :_destroy
+                                    ])
   end
 end

@@ -8,5 +8,7 @@ class Product < ApplicationRecord
   validates :code, uniqueness: true
   
   belongs_to :vendor
+  has_many :stocks
+  accepts_nested_attributes_for :stocks, reject_if: :all_blank, allow_destroy: true
   
 end
