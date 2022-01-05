@@ -35,29 +35,21 @@
 
   <hr>
   <h3>庫存</h3>
-  <%= form.fields_for :stocks do |stock_form| %>
-    <div class="columns nested-fields">
-      <div class="column is-6">
-        <div class="field">
-          <%= stock_form.label :spec, '規格', class: 'label' %>
-          <%= stock_form.text_field :spec, class: 'input' %>
-        </div>
-      </div>
-      <div class="column is-2">
-        <div class="field">
-          <%= stock_form.label :quantity, '數量', class: 'label' %>
-          <%= stock_form.number_field :quantity, class: 'input' %>
-        </div>
-      </div>
-      <div class="column is-1">
-        <div class="field">
-          X
-        </div>
-      </div>
-      <div class="column">
-      </div>
+  <div data-controller="product-form">
+    <template data-target="product-form.template">
+      <%= form.fields_for :stocks, Stock.new, child_index: "ADD_STOCK" do |stock|%>
+        <%= render "stock_fields", form: stock %>
+      <%end%>
+    </template>
+
+    <%= form.fields_for :stocks do |stock_form| %>
+      <%= render "stock_fields", form: stock_form %>
+    <% end %>
+
+    <div data-target="product-form.link">
+      <%=link_to "新增", "#", class: "button is-light is-small", data: {action: "product-form#add_stock"} %>
     </div>
-  <% end %>
+  </div>
 
   <%= form.submit value= '新增', class: 'button is-primary is-medium' %>
   <input type="button" class='button is-gray is-medium' value="取消" onclick="location.href='/admin/products'">
