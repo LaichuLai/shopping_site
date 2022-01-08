@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root 'pages#index'
     resources :products, except: [:show]
     resources :vendors, except: [:show]
+    resources :categories, except: [:show]
   end
 
 

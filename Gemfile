@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
-
+# acts_as_list
+gem 'acts_as_list', '~> 1.0', '>= 1.0.4'
 #friendly id 
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 #paranoia install

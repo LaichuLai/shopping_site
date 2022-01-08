@@ -1,4 +1,3 @@
-
 <%= form_with(model: [:admin, product]) do |form| %>
   <div class="field">
     <%= form.label :name, '商品名稱', class: 'label' %>
@@ -42,8 +41,8 @@
       <%end%>
     </template>
 
-    <%= form.fields_for :stocks do |stock_form| %>
-      <%= render "stock_fields", form: stock_form %>
+    <%= form.fields_for :stocks do |stock| %>
+      <%= render "stock_fields", form: stock %>
     <% end %>
 
     <div data-target="product-form.link">
@@ -51,6 +50,6 @@
     </div>
   </div>
 
-  <%= form.submit value= '新增', class: 'button is-primary is-medium' %>
+  <%= form.submit class: 'button is-primary is-medium' %>
   <input type="button" class='button is-gray is-medium' value="取消" onclick="location.href='/admin/products'">
 <% end %>

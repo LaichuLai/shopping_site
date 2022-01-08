@@ -1,0 +1,20 @@
+<h1 class="title">分類表</h1>
+<%=link_to "新增分類", new_admin_category_path, class: "button"%>
+
+<table class="table is-fullwidth has-shadowed">
+  <thead>
+    <tr>
+      <th>名稱</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category|%>
+      <td><%= link_to category.name, edit_admin_category_path(category)%></td>
+      <td>
+        <%= link_to "刪除", admin_category_path(category), method: :delete, data: {confirm: "確定刪除?"}, class:"button is-danger is-small"%>
+      </td>
+    <%end%>
+  </tbody>
+</table>
